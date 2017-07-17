@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+form,input{
+	outline: none;
+}
+body{
+	background: rgb(238,238,238);
+}
+.reg_head_outer{
+	height: 130px;
+	margin-top: 10px;
+}
+.reg_head{
+	width: 1190px;
+	height: 74px;
+	margin: 0 auto;	
+	padding: 31px 0 25px;
+}
+.reg_head .reg_logo{
+	float: left;
+	width: 196px;
+	height: 74px;
+}
+.reg_head .welcome{
+	float: left;
+	display: inline-block;
+	height: 74px;
+	line-height: 74px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	font-size: 17px;
+}
+.reg_head .welcome i{
+	display: inline-block;
+	height: 17px;
+	line-height: 17px;
+	padding-left: 10px;
+	border-left: 2px solid #c9c9c9;
+	font-style: normal;
+}
+.reg_head .reg_login{
+	height: 52px;
+	padding-top: 22px;
+	float: right;
+	font-size: 12px;
+	color: #444;
+}
+.reg_head .reg_login p{
+	height: 30px;
+	line-height: 30px;
+}
+.reg_head .reg_login p a{
+	height: 10px;
+	color: #E91456;
+	border: 1px solid #C9C9C9;
+	border-top: none;
+	border-bottom: none;
+	padding: 0 5px;
+}
+.reg_head .reg_login p a:hover{
+	text-decoration: underline;
+}
+
+.log_box{
+	width: 1200px;
+	height: 410px;
+	margin: 0 auto 20px;
+}
+.log_box .log_left,.log_left img{
+	width: 850px;
+	height: 380px;
+	float: left;
+}
+.log_box .log_right{
+	background: #FFFFFF;
+	width: 315px;
+	height: 380px;
+	float: right;
+	padding-left: 35px;
+	position: absolute;
+	right: 100px;
+}
+.log_right .log_user{
+	height: 72px;
+	width: 280px;
+}
+.log_user span{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	float: left;
+}
+.log_user a{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	float: right;
+	color: #E91456;
+}
+.log_user a:hover{
+	text-decoration: underline;
+}
+.log_user input{
+	width: 278px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid lightgray;
+	outline: none;
+	font-size: 12px;
+}
+.log_box .log_pwd{
+	width: 280px;
+	padding: 20px 0;
+}
+.log_pwd input{
+	width: 278px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid lightgray;
+}
+.log_box .log_code{
+	width: 280px;
+	margin-bottom: 20px;
+}
+.log_box .log_code input{
+	width: 146px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid lightgray;
+	font-size: 12px;
+	/*解决input旁边有间隙的方法！！*/
+	float: left;
+}
+.log_box .log_code span{
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	width: 95px;
+	background: #E91456;
+	color: #FFFFFF;
+	font-size: 22px;
+	cursor: pointer;
+	/*设置文字的横向间距！！！*/
+	letter-spacing: 2px;
+	
+}
+.log_box .log_code span:hover{
+	background: #cc1c23;
+}
+.log_right .log{
+	width: 280px;
+	height: 68px;
+}
+.log_right .log input{
+	/*下面两个可以解决按钮和文字不再一条线上的问题！！！*/
+	vertical-align: middle;
+	margin-top: 0;
+}
+.log_right .log span{
+	font-size: 12px;
+	color: #444444;
+	margin-right: 5px;
+	line-height: 36px;
+}
+.log_right .log a{
+	font-size: 12px;
+	color: #000000;
+}
+.log_right .log a:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+.log_right .log button{
+	width: 280px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #E91456;
+	font-size: 14px;
+	outline: none;
+	border: #e21357;
+	cursor: pointer;
+}
+.log_right .log button:hover{
+	background: #cc1c23;
+}
+.log_right .log_others{
+	width: 350px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 12px;
+	color: #444444;
+	padding-top: 20px;
+	border-bottom: 1px solid #E8E8E7;
+	/*relative是相对于自己原本所在的位置来定位！！！*/
+	position: relative;
+	left: -35px;
+}
+.log_choice{
+	width: 150px;
+	margin: 0 auto;
+}
+.log_right .log_choice .qq{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	font-size: 10px;
+	color: #444444;
+	float: left;
+	padding-top: 10px;
+}
+.log_right .log_choice .qq:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+.log_right .log_choice .qq img{
+	float: left;
+	width: 16px;
+	height: 16px;
+}
+.log_right .log_choice .weibo{
+	display: inline-block;
+	margin-left: 10px;
+	padding-top: 8px;
+	float: left;
+}

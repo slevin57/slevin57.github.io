@@ -1,0 +1,18 @@
+[
+	{
+		"img": "img/bg1.jpg",
+		"id": 1
+	},
+	{
+		"img": "img/bg2.jpg",
+		"id": 2
+	},
+	{
+		"img": "img/bg3.jpg",
+		"id": 3
+	},
+	{
+		"img": "img/bg4.jpg",
+		"id": 4
+	}
+]

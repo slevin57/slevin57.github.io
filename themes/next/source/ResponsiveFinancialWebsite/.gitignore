@@ -1,0 +1,10 @@
+*~
+.DS_Store
+
+#IDE生成的文件
+.idea
+
+node_modules
+
+#自动化工具生成的发布文件夹
+dist

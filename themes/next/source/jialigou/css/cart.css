@@ -1,0 +1,405 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "微软雅黑";
+}
+
+ul,ol {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.head{
+	margin-bottom: 10px;
+}
+.head .nav_outer {
+	height: 36px;
+	background: #F7F7F7;
+	border-bottom: 1px solid #E8E8E7;
+}
+
+.head .nav_outer .nav {
+	width: 1190px;
+	height: 26px;
+	line-height: 26px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.head .tel{
+	width: 230px;
+	height: 28px;
+	line-height: 28px;
+	margin-right: 10px;
+	font-size: 12px;
+	font-family: "宋体";
+	float: left;
+}
+/*
+ 行间元素和行内块元素一定要设置宽高才能显示，
+ 图片撑不起来。
+ */
+.head .tel i{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/ind-tel.png);
+	vertical-align: middle;
+}
+.head .tel span{
+	font-size: 13px;
+	font-weight: bold;
+	color: #E91456;
+}
+.head .login-info{
+	width: 110px;
+	height: 26px;
+	font-size: 12px;
+	float: left;
+	/*为什么不写float会溢出外面，而且是排在下面的？*/
+}
+.head .login-info span{
+	margin-right: 5px;
+}
+.head .nav ul{
+	float: right;
+	font-size: 12px;
+}
+.head .nav ul li{
+	float: left;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+.head .nav ul i{
+	float: left;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/ind-mobile.png);
+	margin-top: 5px;
+	margin-right: 3px;
+}
+.head .nav a:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+.cart_head_outer{
+	overflow: hidden;
+	background: #FFFFFF;
+	margin-top: 10px;
+}
+.cart_head{
+	width: 1190px;
+	height: 74px;
+	margin: 0 auto 20px;	
+	padding: 0 0 10px;
+}
+.cart_head .cart_logo{
+	float: left;
+	width: 196px;
+	height: 74px;
+}
+.cart_head .cart_name{
+	float: left;
+	display: inline-block;
+	height: 74px;
+	line-height: 74px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	font-size: 17px;
+}
+.cart_head .cart_name i{
+	display: inline-block;
+	height: 17px;
+	line-height: 17px;
+	padding-left: 10px;
+	border-left: 2px solid #c9c9c9;
+	font-style: normal;
+}
+.cart_head .cart_process{
+	float: right;
+	color: #444;
+	font-size: 0;
+	cursor: pointer;
+}
+
+
+
+.cart_box{
+	width: 1190px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.cart_box .cart_title{
+	padding: 0 5px;
+	height: 20px;
+}
+.cart_box .cart_title span{
+	font-size: 13px;
+	height: 100%;
+}
+.cart_box .cart_title span a{
+	color: red;
+	font-size: 13px;
+}
+.cart_box .cart_title span a:hover{
+	text-decoration: underline;
+}
+.cart_box .cart{
+	border: 1px solid #c9c9c9;
+	overflow: hidden;
+	position: relative;
+}
+.cart_box .cart ol{
+	height: 39px;
+	border-bottom: 1px solid #c9c9c9;
+	padding: 0 5px;
+	background: #EEEEEE;
+}
+#cart_div{
+	min-height: 191px;	
+}
+.cart_box .cart #cart_div ul{
+	padding: 0 5px;
+	border-bottom: 1px solid #c9c9c9;
+	width: 1178px;
+	overflow: hidden;
+}
+ #warn{
+	width: 800px;
+	height: 190px;
+	margin: 0 auto;
+	line-height: 190px;
+	text-align: center;
+	display: none;
+	position: absolute;
+	top: 39px;
+	left: 180px;
+	/*z-index: 1;*/
+}
+ #warn.active{
+ 	display: block;
+ }
+.cart_box .cart li{
+	float: left;
+}
+.cart_box .cart ol li{
+	font-size: 13px;
+	line-height: 39px;
+}
+.cart_box .cart .select{
+	width: 252px;
+}
+.cart_box .cart .gname{
+	width: 310px;
+}
+.cart_box .cart .price{
+	width: 152px;
+}
+.cart_box .cart .count{
+	width: 157px;
+}
+.cart_box .cart .jlprice{
+	width: 152px;
+}
+.cart_box .cart .operation{
+	width: 155px;
+}
+.cart ul .li1{
+	font-size: 0;
+}
+/*input和img垂直居中对齐的方法，同时设置：*/
+.cart ul .li1 input,.cart ul .li1 img{
+	vertical-align: middle;
+}
+.cart ul .li1 input{
+	width: 23px;
+	height: 23px;
+	margin-right: 23px;
+	border-radius: 50%;
+}
+.cart ul .li1 img{
+	width: 150px;
+	height: 150px;
+	margin-top: 20px;
+}
+.cart ul .li2{
+	padding-top: 15px;
+}
+.cart ul .li2 a{
+	font-family: "宋体";
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: bold;
+}
+.cart ul .li2 a:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+.cart ul .li2 p{
+	font-size: 13px;
+	line-height: 20px;
+	color: #444444;
+}
+.cart ul .li3 span{
+	font-size: 13px;
+	line-height: 190px;
+}
+.cart ul .li4{
+	line-height: 190px;
+}
+.cart ul .li4 b{
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+.cart ul .li4 input{
+	width: 40px;
+	height: 24px;
+	text-align: center;	
+	outline: none;
+}
+.cart ul .li5 span{
+	font-size: 13px;
+	line-height: 190px;
+	font-weight: bold;
+	color: #444444;
+}
+.cart ul .li6{
+	padding-top: 73px;
+}
+.cart ul .li6 p{
+	line-height: 22px;
+}
+.cart ul .li6 p a{
+	font-size: 13px;
+}
+.cart ul .li6 p a:hover{
+	color: #E91456;
+}
+.cart_box .cart .cart_sum{
+	background: #EEEEEE;
+	padding: 0 5px;
+	width: 1178px;
+	height: 130px;
+	position: relative;
+}
+.cart_box .cart_sum_left{
+	color: #444444;
+	font-size: 13px;
+	line-height: 30px;
+	width: 680px;
+	float: left;
+}
+.cart_box .cart_sum_left a{
+	font-size: 13px;
+	color: #444444;
+	margin: 0 5px;
+}
+.cart_box .cart_sum_mid{
+	width: 179px;
+	height: 100%;
+	border-right: 1px solid #c9c9c9;
+	float: left;
+}
+.cart_box .cart_sum_mid p{
+	font-size: 13px;
+	color: #444444;
+	line-height: 30px;
+}
+.cart_box .cart_sum_mid .total{
+	font-weight: bold;
+	color: #E91456;
+}
+.cart_box .cart_right_btn{
+	display: block;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	padding: 0 12px;
+	color: #FFFFFF;
+	background: rgb(226,19,87);
+	border: 1px solid #e21357;
+	outline: none;
+	cursor: pointer;
+	position: absolute;
+	bottom: 20px;
+	right: 74px;
+}
+.cart_box .cart_right_btn:hover{
+	background: rgb(204,28,35);
+}
+.like_box{
+	width: 1192px;
+	margin: 0 auto;
+	
+}
+.like_box .like_title{
+	padding: 0 6px;
+	height: 25px;
+	font-size: 14px;
+	color: #444444;
+}
+.like_box .like_ul{
+	width: 1188px;
+	border: 1px solid #E8E8E7;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.like_box .like_ul li{
+	width: 230px;
+	height: 345px;
+	border: 1px solid rgb(255, 255, 255);
+	padding: 10px 0;
+	margin-left: 3px;
+	float: left;
+}
+.like_box .like_ul li:hover{
+	border: 1px solid rgb(125,125,125);
+}
+.like_box .like_ul li div{
+	width: 230px;
+	height: 230px;
+	overflow: hidden;
+	position: relative;
+}
+.like_box .like_ul li img{
+	width: 230px;
+	height: 230px;
+	cursor: pointer;
+	position: absolute;
+}
+.like_box .like_ul li p{
+	height: 35px;
+	padding: 5px;
+	font-size: 12px;
+	line-height: 15px;
+}
+.like_box .like_ul li span{
+	color: #E91456;
+	font-size: 14px;
+	padding: 5px;
+	display: inline-block;
+	width: 100%;
+}
+.like_box .like_ul li a{
+	display: block;
+	line-height: 30px;
+	font-size: 14px;
+	width: 75px;
+	margin: 5px auto;
+	padding: 0 12px;
+	border: 1px solid #d0d0d0;
+	background: #f3f3f3;
+	text-align: center;
+}
+.like_box .like_ul li a:hover{
+	background: rgb(231,231,231);
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/check_login.js" ></script>
+		<!--<script type="text/javascript">
+		$(function () {
+		//======验证码区域：	
+			var code = $(".log_code span").eq(0);
+			
+			code.click(function () {
+				var str = randomCode();
+				$(this).html(str);
+			})
+			
+			//封装生成验证码函数
+			function randomCode () {
+				var str = "";
+				for (var i=0;i<4;i++) {
+				//创建变量随机取值0或1
+					var isNum = parseInt(Math.random()*10)%2;
+					
+					if (isNum) {//isNum==1，生成数字
+						str += parseInt(Math.random()*10);
+					}else{//生成大写字母
+						str += String.fromCharCode(parseFloat(65+Math.random()*26));
+					}
+				
+				}
+				return str;
+			}
+			
+			
+			
+			
+		//======登陆验证区域：
+			
+			//如果上一次刚登陆过，自动填入信息
+			var oldLoginUser = $.cookie("loginUser");
+			if (oldLoginUser) {
+				oldLoginUser = JSON.parse(oldLoginUser);
+				
+				$(".log_user input").eq(0).val(oldLoginUser.username);
+				$(".log_pwd input").eq(0).val(oldLoginUser.pwd);
+			}
+			
+			//点击之后验证的登陆
+			$("#log_btn").click(function () {
+				
+				//取消form表单提交按钮后浏览器的自动刷新
+				$("form").submit(function (e) {
+					e.preventDefault();
+				})
+				
+				var username = $(".log_user input").eq(0).val();
+				var pwd = $(".log_pwd input").eq(0).val();
+				
+				//获取cookie中的所有用户
+				var arr = $.cookie("users");
+				if (arr) {
+					arr = JSON.parse(arr);
+					
+					var isExist = false;
+					for (var i=0;i<arr.length;i++) {
+						//如果存在用户名和密码同时匹配
+						if (username == arr[i].username && pwd == arr[i].pwd) {
+							alert("欢迎回来。");
+	//						window.location.href = "index.html";
+							isExist = true;
+							
+							//新建一个名为loginUser的cookie，保存当前登陆的用户信息
+							var loginuser = {
+								username:username,
+								pwd:pwd
+							}
+							$.cookie("loginUser",JSON.stringify(loginuser),{expires:30,path:"/"});
+							console.log($.cookie("loginUser"));
+						}//if
+						
+					}//for
+					
+					if (isExist == false) {
+						alert("用户名或密码错误，请重新登录。")
+						$("form input").val("");//清空输入框内的信息
+					}
+					
+				}else{
+						alert("请先注册，即将跳转到注册页面！")
+						location.href = "register.html";
+					}
+				
+			})//click
+			
+		
+		
+		
+		
+			
+		})
+		</script>-->
+	</head>
+	<body>
+		<!--head-->
+		<div class="reg_head_outer">
+			<div class="reg_head">
+				<div class="reg_logo">
+					<a href="index.html"><img src="img/ladygood.png"/></a>
+				</div>
+				<span class="welcome"><i>用户登录</i></span>
+				<div class="reg_login">
+					<p> <a href="#">嘉丽购电视会员激活入口</a></p>
+				</div>
+			</div>		
+		</div>		
+		
+		<!--login-->
+		<div class="log_box">
+			<div class="log_left">
+				<img src="img/login-bg.jpg"/>
+			</div>
+			<div class="log_right animated">
+				<form action="" method="">
+					<div class="log_user">
+						<span>嘉丽购会员登陆</span>
+						<a href="register.html">免费注册</a>
+						<input type="text" name="" id="" placeholder="用户名/邮箱/电话号码" title="请老实输入" />
+					</div>
+					<div class="log_pwd">
+						<input type="password" name="" id="" placeholder="密码" title="请老实输入密码" />
+					</div>
+					<div class="log_code">
+						<input type="text" name="" id="code_input" placeholder="验证码" />
+						<span></span>
+					</div>
+					<div class="log">
+						<input type="checkbox" name="" id="" value="" checked="checked" />
+						<span>自动登录</span>
+						<a href="#">找回密码</a>
+						<button type="submit" id="log_btn">登陆</button>
+					</div>
+				</form>
+				<div class="log_others">
+					亲，没有账号，你可以选择以下快捷登录方式！
+				</div>
+				<div class="log_choice">
+					<a class="qq" href="#"><img src="img/qq.png"/>QQ登陆</a>
+					<a class="weibo" href="#"><img src="img/other_way.jpg"/></a>
+				</div>
+			</div>
+		</div>
+	
+		<!--footer-->
+		<div class="footer">
+			
+		</div>
+	</body>
+</html>

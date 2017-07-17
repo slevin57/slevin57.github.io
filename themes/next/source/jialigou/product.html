@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" href="css/product.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script type="text/javascript" src="js/product.js" ></script>
+	
+	</head>
+	<body>
+		<!--页头-->
+		<div class="header">
+			<div class="head">
+				<div class="nav_outer">
+					<div class="nav">
+						<div class="tel">
+							<i ></i>
+							电话热线
+							<span> 400-630-0077 </span>
+						</div>
+						<div class="login-info">
+							<span><a href="login.html">[登陆]</a></span>
+							<span><a href="register.html">[免费注册]</a></span>
+						</div>
+						<ul class="nav_left">
+							<li><a href="#">我的嘉</a></li>
+							<li><a href="#">我的订单</a></li>
+							<li><a href="#">客户电话</a></li>
+							<li><a href="#">电视会员激活</a></li>
+							<i></i>
+							<li>
+								<a href="#">手机嘉丽购</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="search">
+					<a id="logo" href="index.html"><img src="img/ladygood.png"/></a>
+					<form id="searchForm" action="" method="get">
+						<input type="text" id="search_input" title="请输入搜索的文字" placeholder="输入商品名称或电视商品编号" />
+						<button id="search_btn" class="btn">
+							<i></i>
+							搜索
+						</button>
+					</form>
+					<div id="cart">
+						<a href="cart.html">
+							<span>
+								<i class="animated" id="cart_icon">0</i>
+							</span>
+							<em>我的购物车</em>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!--导航-->
+			<div class="main_nav_outer">
+				<div class="main_nav">
+					<div class="all_classify">
+						<b>全部商品分类</b>
+						<div class="mini_classify">
+							<ul>
+								<li><a href="#">护肤、化妆、美容</a></li>
+								<li><a href="#">箱包、服饰、配饰</a></li>
+								<li><a href="#">珠宝、收藏品</a></li>
+								<li><a href="#">家居、厨房、日用</a></li>
+								<li><a href="#">电脑、数码、家电</a></li>
+								<li><a href="#">运动、健康、保健</a></li>
+							</ul>
+						</div>
+					</div>
+					<ul class="top">
+						<li><a  class="cur" href="index.html">首页</a></li>
+						<li class="line"><i></i></li>
+						<li><a href="#">TV直播</a></li>
+						<li class="line"><i></i></li>
+						<li><a href="#">嘉丽全球购</a></li>
+						<li class="line"><i></i></li>
+						<li><a href="#">水果生鲜</a></li>
+						<li class="line"><i></i></li>
+					</ul>
+					<div class="call">
+						<span >
+							订购热线
+						</span>
+						 400-630-0077
+					</div>
+		
+				</div>
+			</div>
+		</div>
+		
+			
+		<!--产品介绍-->
+		<div class="product">
+			<div class="pro_title">
+				<b><a href="#">服装、箱包</a></b>
+				<em> > </em>
+				<span><a href="#">流行手表</a></span>
+				<em> > </em>
+				<span class="add_pro_name"></span>
+			</div>
+			<div class="pro_buy">
+				<div class="pro_buy_left">
+					<div class="big_pic small_img">
+						<div class="small_area"></div>
+						<!--<img src="img/1000.jpg"/>
+						<img src="img/1001.jpg"/>-->
+					</div>
+					<div class="mini_pic">
+						<!--<img src="img/1000.jpg"/>
+						<img src="img/1001.jpg"/>-->
+					</div>
+					<div class="share">
+						分享到：此处省略几个图标^_^
+					</div>
+					<div class="bigger_area">
+						<!--<img class="bigger_img" src="img/1000.jpg"/>-->
+					</div>
+				</div>
+				<div class="pro_buy_right">
+					<div class="goods_name">
+						<b class="add_pro_name" id="pro_goods_name"></b>
+						<em>(供货号:<i id="pro_goodes_id"></i>)</em>
+					</div>
+					<div class="goods_price">
+						<ul class="goods_priceul">
+							<li class="li1">
+								<span class="left">嘉丽价</span>
+								<i>￥</i>
+								<em id="pro_goods_price"></em>
+							</li>
+							<li class="li2">
+								<span class="left">积分</span>
+								<em>订购此商品可返回<i>1023*2</i>积分</em>
+							</li>
+						</ul>
+					</div>
+					<div class="goods_color">
+						<span class="left">颜色</span>
+						<div class="color_choice">
+							<span class="add_pro_name"></span>
+							<ul>
+								<li><i>金色</i></li>	
+								<li><i>黑色</i></li>
+							</ul>
+						</div>
+					</div>
+					<div class="goods_count">
+						<span class="left">数量</span>
+						<b id="pro_sub">-</b>
+						<input type="text" name="" id="pro_goods_num" value="" />
+						<b id="pro_add">+</b>
+						<i>件</i>
+					</div>
+					<div class="goods_buy">
+						<button class="btn1">立即购买</button>
+						<button class="btn2">加入购物车</button>
+						<button class="btn3">收藏</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="match_box">
+			<div class="match_title">
+				<span>最佳搭配</span>
+			</div>
+			<div class="match_img">
+				<ul>
+					
+					<li>
+						<a href="product.html?20120109">
+							<img src="img/1474624648366915027.jpg"/>
+						</a>
+						<a href=""><span>浪莎天鹅绒防刮加裆连裤袜12+10超值组</span></a>
+						<div class="match_price">
+							￥<i>199</i>
+						</div>
+					</li>
+					<li>
+						<a href="product.html?20120066">
+							<img src="img/14742782841516733747.jpg"/>
+						</a>
+						<a href=""><span>迪菲怡提花美体热能保暖内衣4+4超值组</span></a>
+						<div class="match_price">
+							￥<i>199</i>
+						</div>
+					</li>
+					<li>
+						<a href="product.html?20120123">
+							<img src="img/1475140112362163202.jpg"/>
+						</a>
+						<a href=""><span>迪格尔斯新款条纹男士翻领POLO衫4+1件组</span></a>
+						<div class="match_price">
+							￥<i>199</i>
+						</div>
+					</li>
+					<li>
+						<a href="product.html?20120172">
+							<img src="img/58107f1e3219d.jpg"/>
+						</a>
+						<a href=""><span>YS韩国风情法兰绒家居服2+2超值组</span></a>
+						<div class="match_price">
+							￥<i>199</i>
+						</div>
+					</li>
+					<li>
+						<a class="a1" href="product.html?20119651">
+							<img src="img/1463643399862159457.jpg"/>
+						</a>
+						<a class="a2" href=""><span>冰希黎boitown浪漫香氛情人节</span></a>
+						<div class="match_price">
+							￥<i>199</i>
+						</div>
+					</li>
+                   
+				</ul>
+			</div>
+		</div>
+		<div class="detail_box">
+			<div class="detail_left">
+				<div class="recently">
+					<span>最近浏览</span>
+					<a href=""><img src="img/58107f1e3219d.jpg"/></a>
+					<a href=""><p>YS韩国风情法兰绒家居服2+2超值组</p></a>
+					<div class="rec_price">
+						￥<i>1498</i>
+					</div>
+				
+				</div>
+					
+				<ul class="hot">
+					<span>热销排行</span>
+					<li>
+						<a href=""><img src="img/564580a4288d3.jpg"/></a>
+						<a href=""><p>浪莎男士超暖黄金甲保暖内衣2+2超值组</p></a>
+						<div class="hot_price">
+							￥<i>1498</i>
+						</div>						
+					</li>
+					<li>
+						<a href=""><img src="img/55efd16392028.jpg"/></a>
+						<a href=""><p>迪菲怡时尚风范欧美印花连衣裙3+1组</p></a>
+						<div class="hot_price">
+							￥<i>1498</i>
+						</div>						
+					</li>
+					<li>
+						<a href=""><img src="img/580dd8736e39a.jpg"/></a>
+						<a href=""><p>花花公子大气简约仿绵羊皮加绒皮衣尊享组</p></a>
+						<div class="hot_price">
+							￥<i>1498</i>
+						</div>						
+					</li>
+					<li>
+						<a href=""><img src="img/57ece0069b3e8.jpg"/></a>
+						<a href=""><p>花花公子男士皮具尊享组</p></a>
+						<div class="hot_price">
+							￥<i>1498</i>
+						</div>						
+					</li>
+				</ul>					
+			</div>
+			
+			<div class="detail_right">
+				 <ul id="list1">
+				 	<li>
+				 		<span></span>
+				 		<i>商品介绍</i>
+				 	</li>
+				 	<li>
+				 		<span></span>
+				 		<i>商品参数</i>
+				 	</li>
+				 	<li>
+				 		<span></span>
+				 		<i>包装清单</i>
+				 	</li>
+				 	<li>
+				 		<span></span>
+				 		<i>商品评论</i>
+				 	</li>
+				 	<li>
+				 		<span></span>
+				 		<i>用户咨询</i>
+				 	</li>
+				 </ul>
+				 <ol id="list2">
+				 	<li class="first">
+				 		<!--<img src="img/pro_detail1.png"/>-->
+				 	</li>
+				 	<li>
+				 		<img src="img/pro_detail2.png"/>
+				 	</li>
+				 	<li>
+				 		<img src="img/pro_detail3.png"/>
+				 	</li>
+				 	<li>
+				 		<img src="img/pro_detail4.png"/>
+				 	</li>
+				 	<li>
+				 		<img src="img/pro_detail5.png"/>
+				 	</li>
+				 </ol>
+				 
+			</div>
+		</div>
+		<!--页脚-->
+		<div class="footer">
+			
+		</div>
+	</body>
+</html>
