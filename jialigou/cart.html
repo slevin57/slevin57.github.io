@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script type="text/javascript" src="js/cart.js" ></script>
+	</head>
+	<body>
+		<div class="head">
+			<div class="nav_outer">
+				<div class="nav">
+					<div class="tel">
+						<i ></i>
+						电话热线
+						<span> 400-630-0077 </span>
+					</div>
+					<div class="login-info">
+						<span><a href="login.html">[登陆]</a></span>
+						<span><a href="register.html">[免费注册]</a></span>
+					</div>
+					<ul class="nav_left">
+						<li><a href="#">我的嘉</a></li>
+						<li><a href="#">我的订单</a></li>
+						<li><a href="#">客户电话</a></li>
+						<li><a href="#">电视会员激活</a></li>
+						<i></i>
+						<li>
+							<a href="#">手机嘉丽购</a>
+						</li>
+					</ul>
+				</div>
+			</div>			
+			<div class="cart_head_outer">
+				<div class="cart_head">
+					<div class="cart_logo">
+						<a href="index.html"><img src="img/ladygood.png"/></a>
+					</div>
+					<span class="cart_name"><i>购物车</i></span>
+					<div class="cart_process">
+						<img src="img/cart_process.jpg"/>
+					</div>
+				</div>		
+			</div>			
+		</div>
+		
+		<!--购物部分-->
+		<div class="cart_box">
+			<div class="cart_title">
+				<span style="float: left;">全部商品</span>
+				<span style="float: right;"><a href="index.html">返回首页</a></span>
+			</div>
+			<div class="cart">
+				<ol>
+					<li class="select">全选</li>
+					<li class="gname">商品名</li>
+					<li class="price">单价（元）</li>
+					<li class="count">数量</li>
+					<li class="jlprice">嘉丽价</li>
+					<li class="operation">操作</li>
+				</ol>
+				<div id="cart_div">
+					<ul>
+						<!--
+						<li class=" select li1">
+							<input id="check" type="checkbox" />
+							<a href="#"><img src="img/1000.jpg"/></a>
+						</li>
+						<li class=" gname li2">
+							<a href="#">瑞士FESTINA璀璨精湛机械腕表</a>
+							<p>货号：<span id="cart_id">20120228</span></p>
+							<p>颜色/尺码 ：</p>
+							<p>瑞士FESTINA璀璨精湛机械腕表_ 共同金色</p>
+						</li>
+						<li class=" price li3">
+							<span>¥1,498.00</span>
+						</li>
+						<li class=" count li4">
+							<b class="sub">-</b>
+							<input id="change_num" type="text" value="1" />
+							<b class="add">+</b>
+						</li>
+						<li class=" jlprice li5">
+							<span>¥1,498.00</span>
+						</li>
+						<li class=" operation li6">
+							<p class="store"><a href="#">加入收藏夹</a></p>
+							<p class="del"><a href="#">删除</a></p>
+						</li>
+						-->
+					</ul>
+					
+				</div>
+				<div class="cart_sum">
+					<div class="cart_sum_left">
+						<input id="all_check" type="checkbox" />
+						全选
+						<a id="del_check" href="#">删除选中的商品</a>
+						<a id="del_all" href="">清空购物车</a>
+					</div>
+					<div class="cart_sum_mid">
+						<p>商品金额：<span id="total_price1">0.00</span>元</p>
+						<p>运费：<span id="yunfei">0.00</span>元</p>
+						<p class="total">总计：<span id="total_price2">0.00</span>元</p>
+					</div>
+					<button class="cart_right_btn">去结算</button>
+				</div>
+				<!--<div id="warn">您的购物车是空的</div>-->
+			</div>			
+			
+		</div>
+
+		<div class="like_box">
+			<div class="like_title">
+				猜你喜欢
+			</div>
+			<ul class="like_ul">
+				<li>
+					<div>
+						<img src="img/1476868153128354544.jpg"/>
+					</div>
+					<p>瑞士FESTINA璀璨精湛机械腕表</p>
+					<span>￥1498.00</span>
+					<a href="#">加入购物车</a>
+				</li>
+				<li>
+					<div>
+						<img src="img/1001.jpg"/>
+					</div>
+					<p>瑞士FESTINA璀璨精湛机械腕表</p>
+					<span>￥1498.00</span>
+					<a href="#">加入购物车</a>
+				</li>
+				<li>
+					<div>
+						<img src="img/14742782841516733747.jpg"/>
+					</div>
+					<p>瑞士FESTINA璀璨精湛机械腕表</p>
+					<span>￥1498.00</span>
+					<a href="#">加入购物车</a>
+				</li>
+				<li>
+					<div>
+						<img src="img/1474624648366915027.jpg"/>
+					</div>
+					<p>瑞士FESTINA璀璨精湛机械腕表</p>
+					<span>￥1498.00</span>
+					<a href="#">加入购物车</a>
+				</li>
+				<li>
+					<div>
+						<img src="img/14774789131491260226.jpg"/>
+					</div>
+					<p>瑞士FESTINA璀璨精湛机械腕表</p>
+					<span>￥1498.00</span>
+					<a href="#">加入购物车</a>
+				</li>
+			</ul>
+		</div>
+		
+		<!--尾部footer-->
+		<div class="footer">
+			<!--外部引入-->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,500 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+ul,ol {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.product{
+	width: 1190px;
+	margin: 0 auto;	
+	/*这里的overflow不用的话为什么内容会飞到右边*/
+	overflow: hidden;
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 1;
+}
+.product .pro_title{
+	width: 1190px;
+	height: 40px;
+	margin-bottom: 6px;
+	line-height: 40px;
+	/*float: left;*/
+}
+.pro_title em{
+	font-style: normal;
+}
+.pro_title b{
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	color: #444444;
+}
+.pro_title span,.pro_title span a{
+	font: 12px/150% Arial,Verdana,"5b8b4f53";
+}
+.pro_buy{
+	height: 511px;
+}
+.pro_buy_left{
+	float: left;
+	width: 400px;
+	position: relative;
+	z-index: 10;
+}
+.pro_buy_left .big_pic{
+	border: 1px solid #E8E8E7;
+	overflow: hidden;
+	width: 400px;
+	height: 400px;
+	position: relative;
+}
+.pro_buy_left .big_pic img{
+	display: block;
+	width: 398px;
+	height: 398px;
+}
+.pro_buy_left .mini_pic{
+	padding: 8px 0;
+	overflow: hidden;
+	height: 66px;
+}
+.pro_buy_left .mini_pic img{
+	display: block;
+	border: 1px solid #ccc;
+	width: 63px;
+	height: 63px;
+	float: left;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.pro_buy_left .share{
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	color: #444444;
+	
+}
+
+
+.pro_buy_left .small_img .small_area{
+	background: rgba(200,255,100,0.3);
+	position: absolute;
+	display: none;
+	border-radius: 50%;
+}
+.pro_buy_left .bigger_area {
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	left: 402px;
+	top: 0;
+	overflow: hidden;
+	z-index: 2;
+	display: none;
+	position: absolute;
+}
+.pro_buy_left .bigger_area .bigger_img{
+	width: 800px;
+	height: 800px;
+	position: absolute;
+}
+
+
+
+.pro_buy_right{
+	overflow: hidden;
+	margin-left: 20px;
+	width: 740px;
+	height: 400px;
+	float: left;
+	position: relative;
+}
+.pro_buy_right .goods_name{
+	margin-bottom: 10px;
+	height: 32px;
+}
+.pro_buy_right .goods_name b{
+	line-height: 32px;
+	font-size: 20px;
+	color: #444444;
+}
+.pro_buy_right .goods_name em{
+	font-size: 12px;
+	float: right;
+	color: #444444;
+	font-style: normal;
+}
+.pro_buy_right .goods_name em i{
+	font-style: normal;
+}
+.pro_buy_right .goods_priceul{
+	background: #eeeeee;
+}
+.pro_buy_right .goods_priceul li{
+	height: 40px;
+}
+.pro_buy_right .left{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 25px;
+	font-size: 12px;
+	color: #444444;
+}
+
+.pro_buy_right .goods_priceul .li1 i {
+	display: block;
+	float: left;
+	height: 40px;
+	/*下面两行是让文字在div底部的技巧*/
+	line-height: 50px;
+	overflow: hidden;	
+	color: #bf0200;
+	font-size: 20px;
+	margin-right: 5px;
+	font-style: normal;
+}
+.pro_buy_right .goods_priceul .li1 em{
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	font-size: 32px;
+	vertical-align: middle;
+	font-style: normal;
+	color: #BF0200;
+}
+.pro_buy_right .goods_priceul .li2 em{
+	font-style: normal;
+	font-size: 12px;
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	color: #444444;
+}
+.pro_buy_right .goods_priceul .li2 em i{
+	font-style: normal;	
+	color: #E91456;
+}
+.pro_buy_right .goods_color{
+	width: 740px;
+	height: 80px;
+}
+.pro_buy_right .color_choice{
+	float: left;
+	width: 610px;
+	height: 56px;
+	padding: 17px 0 12px;
+}
+.pro_buy_right .color_choice span{
+	display: block;
+	color: #444444;
+	font-size: 12px;
+}
+.pro_buy_right .color_choice ul{
+	/*下面这句为了让ul自适应子元素的宽高*/
+	display: inline-block;
+	/*width: 99px;*/
+	/*height: 24px;*/
+	margin-top: 3px;
+	border: 1px solid #E8E8E7;
+	padding: 2px;
+	margin-left: 5px;
+}
+.pro_buy_right .color_choice ul li{
+	float: left;
+}
+.pro_buy_right .color_choice ul li i{
+	font-style: normal;
+	display: block;
+	font-size: 12px;
+	padding: 4px 12px;
+	border: 1px solid #E8E8E7;
+	cursor: pointer;
+}
+.pro_buy_right .color_choice ul li i.active{
+	border: 1px solid #BF0200;
+}
+.pro_buy_right .color_choice ul li i.active2{
+	background: #BF0200;
+	color: #FFFFFF;
+}
+.pro_buy_right .goods_count{
+	/*width: 260px;*/
+	height: 40px;
+	padding: 5px 0;
+}
+.pro_buy_right .goods_count b{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	margin-top: 8px;
+	border-radius: 50%;
+	background: #eee;
+	text-align: center;
+	cursor: pointer;
+}
+.pro_buy_right .goods_count b:hover{
+	background: rgb(245,245,245);
+}
+.pro_buy_right .goods_count input{
+	width: 43px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	padding: 0 10px;
+	border: 1px solid #E8E8E7;
+	outline: none;
+}
+.pro_buy_right .goods_count i{
+	font-size: 12px;
+	font-style: normal;
+}
+.pro_buy_right .goods_buy{
+	position: absolute;
+	bottom: 0;
+}
+.pro_buy_right .goods_buy button{
+	padding: 0 12px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+}
+.pro_buy_right .goods_buy .btn1{
+	width: 150px;
+	background: rgb(243,243,243);
+	border: 1px solid #d0d0d0;
+}
+.pro_buy_right .goods_buy .btn1:hover{
+	background: rgb(231,231,231);
+}
+.pro_buy_right .goods_buy .btn2{
+	width: 150px;
+	margin: 0 5px;
+	color: #FFFFFF;
+	background: #e21357;
+	border: 1px solid #ba0c0c;
+}
+.pro_buy_right .goods_buy .btn2:hover{
+	background: rgb(204,28,35);
+}
+.pro_buy_right .goods_buy .btn3{
+	/*width: 32px;*/
+	background: #e7e7e7;
+	border: 1px solid #d0d0d0;
+}
+.pro_buy_right .goods_buy .btn3:hover{
+	background: rgb(243,243,243);
+}
+.match_box{
+	width: 1190px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.match_box .match_title span{
+	display: block;
+	width: 56px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 25px;
+	background: #eeeeee;
+	font-size: 14px;
+	color: #444444;
+}
+.match_box .match_img{
+	width: 1148px;
+	height: 259px;
+	padding: 20px;
+	border: 1px solid #E8E8E7;
+}
+.match_box .match_img ul{
+	/*overflow: hidden;*/
+	width: 1148px;
+	height: 259px;
+}
+.match_box .match_img ul li {
+	float: left;
+	width: 188px;
+	height: 257px;
+	margin-left: 30px;
+	border: 1px solid #FFFFFF;
+	cursor: pointer;
+}
+.match_box .match_img ul li:hover{
+	border: 1px solid rgb(232,232,231);
+}
+.match_box .match_img ul li a img{
+	width: 188px;
+	height: 188px;
+}
+.match_box .match_img ul li span{
+	display: block;
+	width: 178px;
+	height: 36px;
+	padding: 5px;
+	font-size: 12px;
+	color: #444444;
+}
+.match_box .match_img ul li span:hover{
+	color: #E91456;
+}
+.match_box .match_price{
+	width: 178px;
+	height: 13px;
+	line-height: 13px;
+	font-size: 12px;
+	color: #E91456;
+}
+.match_box .match_price i{
+	font-style: normal;
+}
+.detail_box{
+	width: 1190px;
+	margin: 0 auto 100px;
+	overflow: hidden;
+	
+}
+.detail_box .detail_left{
+	width: 190px;
+	float: left;
+}
+.detail_box .detail_left .recently{
+	border: 1px solid #E8E8E7;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.detail_box .detail_left .recently span{
+	display: block;
+	width: 165px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 23px;
+	font-size: 14px;
+	background: #EEEEEE;
+}
+.detail_box .detail_left .recently a img{
+	width: 188px;
+	height: 188px;
+}
+.detail_box .detail_left .recently p{
+	padding: 5px;
+	line-height: 13px;
+	font-size: 12px;
+}
+.detail_box .detail_left .recently p:hover{
+	color: #E91456;
+}
+.detail_box .detail_left .rec_price{
+	font-size: 12px;
+	color: #E91456;
+	line-height: 13px;
+	padding: 5px;
+}
+.detail_box .detail_left .rec_price i{
+	font-style: normal;
+}
+.detail_box .hot{
+	overflow: hidden;
+	border: 1px solid #E8E8E7;
+}
+.detail_box .hot span{
+	display: block;
+	width: 165px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 23px;
+	font-size: 14px;
+	background: #EEEEEE;
+}
+.detail_box .detail_left .hot li{
+	border-top: 1px solid #E8E8E7;
+}
+.detail_box .detail_left .hot li a img{
+	width: 188px;
+	height: 188px;
+}
+.detail_box .detail_left .hot li p{
+	padding: 5px;
+	line-height: 13px;
+	font-size: 12px;
+}
+.detail_box .detail_left .hot li p:hover{
+	color: #E91456;
+}
+.detail_box .detail_left .hot_price{
+	font-size: 12px;
+	color: #E91456;
+	line-height: 13px;
+	padding: 5px;
+}
+.detail_box .detail_left .hot_price i{
+	font-style: normal;
+}
+.detail_box .detail_right{
+	width: 988px;
+	/*让div自动适应里面内容的大小*/
+	height: auto;
+	border: 1px solid #E8E8E7;
+	float: right;
+	overflow: hidden;
+}
+.detail_box .detail_right ul{
+	padding: 0 9px;
+	width: 971px;
+	height: 40px;
+	background: #EEEEEE;
+}
+.detail_box .detail_right ul li{
+	cursor: pointer;
+	width: 194px;
+	height: 40px;
+	float: left;
+}
+.detail_box .detail_right ul li span{
+	display: block;
+	background: url(../img/gray.png);
+	width: 194px;
+	height: 12px;
+}
+.detail_box .detail_right ul li span.active{
+	background: url(../img/red.png);
+}
+.detail_box .detail_right ul li span.active{
+	background: url(../img/red.png);
+}
+.detail_box .detail_right ul li i{
+	display: block;
+	width: 194px;
+	text-align: center;
+	font-size: 12px;
+	color: #444444;
+	font-style: normal;
+}
+.detail_box .detail_right #list2 img{
+	background: rgb(248,248,248);
+	padding-top: 20px;
+	display: block;
+}
+.detail_box .detail_right #list2 .first img{
+	margin: 0 auto;
+}
+.detail_box .detail_right #list2 li{
+	display: none;
+	padding-bottom: 300px;
+	background: rgb(248,248,248);
+}

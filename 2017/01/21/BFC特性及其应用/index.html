@@ -1,0 +1,935 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS,BFC,学习手记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="keywords" content="CSS,BFC,学习手记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFC特性及其简单应用">
+<meta property="og:url" content="http://yoursite.com/2017/01/21/BFC特性及其应用/index.html">
+<meta property="og:site_name" content="鸟 阁">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.piimg.com/583407/fdd65db934e05dfbs.jpg">
+<meta property="og:updated_time" content="2018-06-23T14:24:19.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BFC特性及其简单应用">
+<meta name="twitter:image" content="http://i1.piimg.com/583407/fdd65db934e05dfbs.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/21/BFC特性及其应用/"/>
+
+
+
+
+
+  <title> BFC特性及其简单应用 | 鸟 阁 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-89645446-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">鸟 阁</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">你好哇 :)</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-meh-o"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/21/BFC特性及其应用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Patrick Lea">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar-sanpang.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="鸟 阁">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="鸟 阁" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                BFC特性及其简单应用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-21T13:20:07+08:00">
+                2017-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习手记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习手记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/01/21/BFC特性及其应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/21/BFC特性及其应用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/21/BFC特性及其应用/" class="leancloud_visitors" data-flag-title="BFC特性及其简单应用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://i1.piimg.com/583407/fdd65db934e05dfbs.jpg" alt="enter description here"><br><a id="more"></a></p>
+<h1 id="BFC是什么？"><a href="#BFC是什么？" class="headerlink" title="BFC是什么？"></a>BFC是什么？</h1><p>  BFC（Block Formatting Context）中文直译就是‘块级格式上下文’，它是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。<br>    通俗点说，BFC是一个独立的布局环境，我们可以理解为一个箱子（实际上是看不见摸不着的），箱子内部的元素无论如何翻江倒海，都不会影响到外部。转换为BFC的理解则是：BFC中的元素的布局是不受外界的影响（我们往往利用这个特性来消除浮动元素对其非浮动的兄弟元素和其子元素带来的影响。）并且在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。</p>
+<h1 id="BFC的产生条件"><a href="#BFC的产生条件" class="headerlink" title="BFC的产生条件"></a>BFC的产生条件</h1><ol>
+<li>overflow不为visible；</li>
+<li>浮动（float样式不为none ）；</li>
+<li>绝对定位（position样式为absolue或者fixed ）；</li>
+<li>display为inline-block / table-cell / table-caption / flex / table-flex；</li>
+</ol>
+<h1 id="BFC特性（作用）"><a href="#BFC特性（作用）" class="headerlink" title="BFC特性（作用）"></a>BFC特性（作用）</h1><ol>
+<li>在BFC中，内部的Box会在垂直方向，一个接一个地放置；</li>
+<li>Box垂直方向的距离由margin决定，同一个BFC下相邻两个Box的margin会发生重叠；</li>
+<li><p>在BFC中，每一个盒子的左外边缘（margin-left）会触碰到容器的左边缘(border-left)（对于从右到左的格式来说，则触碰到右边缘），即使存在浮动也是如此。</p>
+<blockquote>
+<p> 即不会发生margin穿透</p>
+</blockquote>
+</li>
+<li><p>形成了BFC的区域不会与float box重叠（可阻止因浮动元素引发的文字环绕现象）；</p>
+</li>
+<li><p>计算BFC高度时，浮动元素也参与计算（BFC会确切包含浮动的子元素，即闭合浮动）。</p>
+<blockquote>
+<p>原本浮动元素应该是脱离文档流的，但BFC中会计算其高度。</p>
+</blockquote>
+</li>
+</ol>
+<p>综上特性所述，BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。</p>
+<h1 id="BFC特性的一些应用"><a href="#BFC特性的一些应用" class="headerlink" title="BFC特性的一些应用"></a>BFC特性的一些应用</h1><ol>
+<li><p>实现自适应两栏布局<br>应用了“BFC的区域不会与float box重叠”的特性；一边浮动，另一边自适应的部分形成BFC，那么两者就不会重叠，避免了出现文字环绕及类似情形。</p>
+</li>
+<li><p>解决父元素高度塌陷（也就是闭合内部浮动 ）<br>应用了“计算BFC高度时，浮动元素也参与计算在内”的特性；</p>
+</li>
+<li><p>解决垂直方向上兄弟元素的margin重叠<br>应用了“属于同一个BFC的两个相邻Boc的margin会发生重叠”的特性。意味着如果相邻兄弟元素不属于同一个BFC，就不会发生margin重叠了；</p>
+</li>
+</ol>
+<h1 id="BFC特性应用实例演示"><a href="#BFC特性应用实例演示" class="headerlink" title="BFC特性应用实例演示"></a>BFC特性应用实例演示</h1><h2 id="实现自适应两栏布局"><a href="#实现自适应两栏布局" class="headerlink" title="实现自适应两栏布局"></a>实现自适应两栏布局</h2><p>代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    <span class="selector-class">.container</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.left</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#B3D1C1</span>;</span><br><span class="line">        <span class="attribute">float</span>: left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.right</span> &#123;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#A694C1</span>;</span><br><span class="line">        <span class="comment">/*把.right这个自适应预算变成BFC，</span></span><br><span class="line"><span class="comment">        避免与.left这个有float属性的元素重叠；*/</span></span><br><span class="line">        **<span class="attribute">overflow</span>: hidden;**</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"container"</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=<span class="string">"left"</span>&gt;<span class="attribute">left</span>&lt;/div&gt;</span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=<span class="string">"right"</span>&gt;<span class="attribute">right</span>&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里不能通过设置float样式的方式把right变为BFC，因为float有收缩、紧密排列的特性，而right又没有固定宽度，设置float属性后，right就会收缩不见。</p>
+</blockquote>
+<h2 id="解决父元素高度塌陷（闭合内部浮动-）"><a href="#解决父元素高度塌陷（闭合内部浮动-）" class="headerlink" title="解决父元素高度塌陷（闭合内部浮动 ）"></a>解决父元素高度塌陷（闭合内部浮动 ）</h2><p>高度塌陷产生原因：父元素未设置固定高度，完全由子元素高度撑开；当子元素float之后脱离了文档流，父元素内部没有支撑，造成高度塌陷。<br>解决：给塌陷的父元素添加overflow：hidden / auto使其变为BFC。<br>代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-class">.container</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#DBD9B7</span>;</span><br><span class="line">        <span class="comment">/*使父元素变为BFC，解决高度塌陷*/</span></span><br><span class="line">        <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.son</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#E67B85</span>;</span><br><span class="line">        <span class="comment">/*会造成高度塌陷*/</span></span><br><span class="line">        <span class="attribute">float</span>: left;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"container"</span>&gt;container</span><br><span class="line">        &lt;<span class="selector-tag">div</span> class=<span class="string">"son"</span>&gt;son&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="解决垂直方向上兄弟元素的margin重叠"><a href="#解决垂直方向上兄弟元素的margin重叠" class="headerlink" title="解决垂直方向上兄弟元素的margin重叠"></a>解决垂直方向上兄弟元素的margin重叠</h2><p>代码：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#fcc</span>;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">25px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.wrap</span> &#123;</span><br><span class="line">        <span class="comment">/*p外面包裹一层，并按如下设置，</span></span><br><span class="line"><span class="comment">        形成一个单独的BFC*/</span></span><br><span class="line">        <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"wrap"</span>&gt;</span><br><span class="line">        &lt;<span class="selector-tag">p</span> class=<span class="string">"a"</span>&gt;a&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">        &lt;<span class="selector-tag">p</span> class=<span class="string">"b"</span>&gt;b&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="触发BFC的属性（方法）与自适应布局面面观"><a href="#触发BFC的属性（方法）与自适应布局面面观" class="headerlink" title="触发BFC的属性（方法）与自适应布局面面观"></a>触发BFC的属性（方法）与自适应布局面面观</h1><ol>
+<li>float：left。动元素本身BFC化，然而浮动元素有破坏性和包裹性，失去了元素本身的流体自适应性，因此，无法用来实现自动填满容器的自适应布局。不过，其因兼容性还算良好。</li>
+<li>position：absolute。脱离文档流严重，不建议使用。</li>
+<li>overflow：hidden。元素BFC本身块状元素的流体特性仍可比较完好得保留。不足之处是如果内容过多，可能会被裁剪。</li>
+<li>display：inline-blockl。display:inline-block会让元素尺寸包裹收缩，完全就不是我们想要的block水平的流动特性。唉，只能是一声叹气一枪毙掉的命！然而，峰回路转，世事难料。大家应该知道，IE6/IE7浏览器下，block水平的元素设置display:inline-block元素还是block水平，也就是还是会自适应容器的可用宽度显示。</li>
+<li>display：table-cell。让元素表现得像单元格一样，IE8+以上浏览器才支持。跟display:inline-block一样，会跟随内部元素的宽度显示，看样子也是不合适的命。但是，单元格有个非常神奇的特性，就是你宽度值设置地再大，实际宽度也不会超过表格容器的宽度。因此，如果我们把display:table-cell这个BFC元素宽度设置很大，比方说3000像素。那其实就跟block水平元素自动适应容器空间效果一模一样了。</li>
+<li>剩下的基本一无是处，就不展开了。</li>
+</ol>
+<p><strong>综上总结，能担任自适应布局的方法也就是：</strong></p>
+<ol>
+<li>overflow：auto / hidden（id7+）</li>
+<li>display：inline-block（ie6、ie7）</li>
+<li>display：table-cell（ie8+）</li>
+</ol>
+<p>而由于overflow有剪裁和出现滚动条等隐患，不适合作为整站通用类，于是，最后，类似清除浮动的通用类语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.clearfix &#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">    content: &apos;&apos;; display: table; clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>两栏或多栏自适应布局的通用类语句是（block标签需配合浮动）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.cell &#123;</span><br><span class="line">    display: table-cell; width: 9999px;</span><br><span class="line">    *display: inline-block; *width: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li><a href="http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/" target="_blank" rel="noopener">CSS深入理解流体特性和BFC特性下多栏自适应布局</a></li>
+</ol>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>文章整理于自己的学习笔记，多为个人理解，仅供参考；如有真知灼见，欢迎交流。</p>
+<blockquote>
+<p>文章始发于<a href="http://www.lipengcheng.xyz，如需转载，请注明出处，谢谢。" target="_blank" rel="noopener">http://www.lipengcheng.xyz，如需转载，请注明出处，谢谢。</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/BFC/" rel="tag"># BFC</a>
+          
+            <a href="/tags/学习手记/" rel="tag"># 学习手记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/13/Sublime-Text3-3126注册码（亲测有效）/" rel="next" title="Sublime Text3.3126激活方法（亲测有效）">
+                <i class="fa fa-chevron-left"></i> Sublime Text3.3126激活方法（亲测有效）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/22/CSS常见居中方法大集合/" rel="prev" title="CSS常见居中方法大团圆">
+                CSS常见居中方法大团圆 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/21/BFC特性及其应用/"
+           data-title="BFC特性及其简单应用" data-url="http://yoursite.com/2017/01/21/BFC特性及其应用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar-sanpang.jpg"
+               alt="Patrick Lea" />
+          <p class="site-author-name" itemprop="name">Patrick Lea</p>
+          <p class="site-description motion-element" itemprop="description">人生如逆旅，不愿做杏仁。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Patricklea" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhihu.com" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://stackoverflow.com/" target="_blank" title="Stack-overflow">
+                  
+                    <i class="fa fa-fw fa-stack-overflow"></i>
+                  
+                  Stack-overflow
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://zhihu.com" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-smile-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhihu.com" title="知乎" target="_blank">知乎</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC是什么？"><span class="nav-number">1.</span> <span class="nav-text">BFC是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC的产生条件"><span class="nav-number">2.</span> <span class="nav-text">BFC的产生条件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC特性（作用）"><span class="nav-number">3.</span> <span class="nav-text">BFC特性（作用）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC特性的一些应用"><span class="nav-number">4.</span> <span class="nav-text">BFC特性的一些应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC特性应用实例演示"><span class="nav-number">5.</span> <span class="nav-text">BFC特性应用实例演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现自适应两栏布局"><span class="nav-number">5.1.</span> <span class="nav-text">实现自适应两栏布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决父元素高度塌陷（闭合内部浮动-）"><span class="nav-number">5.2.</span> <span class="nav-text">解决父元素高度塌陷（闭合内部浮动 ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决垂直方向上兄弟元素的margin重叠"><span class="nav-number">5.3.</span> <span class="nav-text">解决垂直方向上兄弟元素的margin重叠</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#触发BFC的属性（方法）与自适应布局面面观"><span class="nav-number">6.</span> <span class="nav-text">触发BFC的属性（方法）与自适应布局面面观</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">8.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Patrick Lea</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"abici"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("MCEUBsfc2jFJD83lTpm02rUR-gzGzoHsz", "PctuPf1fdt7v37o312WvBIdL");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

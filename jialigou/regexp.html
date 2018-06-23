@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		
+		//匹配一组（2个）字母，要求第一个是a，第二个是d-g之间，并且这一组连续出现2次
+		//例如：adagfefwf44
+		var re = /(a[d-g]){2}/i;
+		
+		
+		//1.数字、字母（不区分大小写）、汉字、下划线
+		//2.5-25个字符，推荐使用中文会员名
+		
+		//匹配合法字符：a-zA-Z0-9的所有单字符&所有汉字，而且是全局匹配
+		var re = /\w\u4e00-\u9fa5/g;
+		//与上面相反，匹配所有非法字符
+		var re = /^[\w\u4e00-\u9fa5]/g;
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

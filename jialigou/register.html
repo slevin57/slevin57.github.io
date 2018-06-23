@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/main.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/check_reg.js" ></script>
+	</head>
+	<body>
+		<div class="reg_head_outer">
+			<div class="reg_head">
+				<div class="reg_logo">
+					<a href="index.html"><img src="img/ladygood.png"/></a>
+				</div>
+				<span class="welcome"><i>欢迎注册</i></span>
+				<div class="reg_login">
+					<p>已有帐号 <a href="login.html">直接登录</a></p>
+				</div>
+			</div>		
+		</div>
+		<div class="login_box">
+			<form>
+				<div class="login_left animated">
+					<div class="user uname">
+						<span>*用户名:</span>
+						<input type="text" name=""  id="reg_name" placeholder="创建用户名" title="创建用户名" />
+						<p></p>
+						<i>1个字符</i>
+					</div>
+					<div class="user pwd">
+						<span>*设置密码:</span>
+						<input type="password" name="" id="reg_pwd" placeholder="创建密码" title="创建密码" />
+						<p></p>
+						<ul>
+							<li class="ruo">弱</li>
+							<li class="zhong">中</li>
+							<li class="qiang">强</li>
+						</ul>
+					</div>
+					<div class="user pwd2">
+						<span>*确认密码:</span>
+						<input type="password" name="" id="reg_pwd2" placeholder="确认密码" title="确认密码" disabled=""/>
+						<p></p>
+					</div>
+					<div class="login">
+						<p class="agree">
+							<input type="checkbox" name="" id="" value="" checked="checked" />
+							<a href="#">我已阅读并同意《嘉丽购物网服务条款》</a>
+						</p>
+						<button id="register_btn">注册</button>
+					</div>
+					<p class="mail_choice">您还可以选择
+						<a href="#">邮箱注册</a>
+					</p>
+				</div>
+			</form>
+			<div class="login_right">
+				<img src="img/login-bg1.jpg"/>
+			</div>
+		</div>
+	
+		<!--footer-->
+		<div class="footer">
+
+		</div>		
+	</body>
+<!--
+	已经转移到独力的js文件跟cookie验证写在一起
+<script type="text/javascript">
+	
+	$(function () {
+		
+		$("#register_btn").click(function () {
+			
+			//阻止form表单提交按钮后的自动刷新
+			$("form").submit(function (e) {
+				e.preventDefault();
+			})
+			
+			//获取input中输入的值
+			var username = $("#reg_name").val();
+			var pwd = $("#reg_pwd").val();
+			
+			var arr = $.cookie("users") ? JSON.parse($.cookie("users")) : [];
+			
+			
+			for (var i=0;i<arr.length;i++) {
+				//如果存在相同用户名
+				if (username == arr[i].username) {
+					alert("已存在相同用户名，请重新填写");
+					$(".user input").val("");//清空输入框的内容
+					return;
+				}
+			}
+			
+			//如果用户名没有重复 就添加
+			var user = {
+				username:username,
+				pwd:pwd
+			}
+			arr.push(user);
+			
+			//保存到cookies
+			$.cookie("users",JSON.stringify(arr),{expires:30,path:"/"});
+			console.log($.cookie("users"));
+			
+			alert("恭喜您注册成功，即将跳转到首页 ^_^");
+			window.location.href = "index.html";
+			
+		})//click
+		
+	})//ready
+</script>
+-->		
+</html>
+
+

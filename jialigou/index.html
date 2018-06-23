@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script type="text/javascript" src="js/jquery-1.12.3.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+		<script type="text/javascript" src="js/banner.js" ></script>
+		<script type="text/javascript" src="js/main.js" ></script>
+		
+	</head>
+	<body>
+		<div id="top_ad">
+			<a href="#"><i></i></a>
+			<span>X</span>
+		</div>
+		<div class="nav_outer">
+			<div class="nav">
+				<div class="tel">
+					<i ></i>
+					电话热线
+					<span> 400-630-0077 </span>
+				</div>
+				<div class="login-info">
+					<span><a href="login.html">[登录]</a></span>
+					<span><a href="register.html">[免费注册]</a></span>
+				</div>
+				<ul class="nav_left">
+					<li><a href="#">我的嘉</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="#">客户电话</a></li>
+					<li><a href="#">电视会员激活</a></li>
+					<i></i>
+					<li>
+						<a href="#">手机嘉丽购</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="head">
+			<div class="search">
+				<a id="logo" href="#"><img src="img/ladygood.png"/></a>
+				<form id="searchForm" action="" method="get">
+					<input type="text" id="search_input" title="请输入搜索的文字" placeholder="输入商品名称或电视商品编号" />
+					<button id="search_btn" class="btn">
+						<i></i>
+						搜索
+					</button>
+				</form>
+				<div id="cart">
+					<a class="mycart" href="cart.html">
+						<span>
+							<i id="index_cart">0</i>
+						</span>
+						<em>我的购物车</em>
+					</a>
+					<div class="mini_cart_box">
+						<ul>
+							<!--<li>
+								<img src="img/1000.jpg"/>
+								<p>花花公子大气简约仿绵羊皮加绒皮衣尊享组</p>
+							</li>
+							-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航-->
+		<div class="main_nav">
+			<ul class="top">
+				<li><a  class="cur" href="#">首页</a></li>
+				<li class="line"><i></i></li>
+				<li><a href="#">TV直播</a></li>
+				<li class="line"><i></i></li>
+				<li><a href="#">嘉丽全球购</a></li>
+				<li class="line"><i></i></li>
+				<li><a href="#">水果生鲜</a></li>
+				<li class="line"><i></i></li>
+			</ul>
+			<div class="call">
+				<span >
+					订购热线
+				</span>
+				 400-630-0077
+			</div>
+			<div class="sidebar_left">
+				<h2>全部商品分类</h2>
+				<ul>
+					<li  class="first">
+						<h3><a href="#">TV直播</a>&nbsp;<a href="#">水果生鲜</a></h3>
+						<span class="firstspan"><a href="#">最新上架</a></span>
+						<span><a href="#">热销排行</a></span>					
+					</li>
+					<li class="act">
+						<h3><a href="#">护肤 美妆</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">面部护理></a></dt>
+								<dd><a href="product.html">洁面乳</a></dd>
+								<dd><a href="product.html">爽肤水</a></dd>
+								<dd><a href="product.html">精华露</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">全身护理></a></dt>
+								<dd><a href="product.html">洗发护发</a></dd>
+								<dd><a href="product.html">染发造型</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">女性护理></a></dt>
+								<dd><a href="product.html">洗液</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">美容工具></a></dt>
+								<dd><a href="product.html">剃须刀</a></dd>
+								<dd><a href="product.html">脱毛器</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">化妆用品></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+						</div>
+					</li>
+					<li class="act">
+						<h3><a href="product.html">服装 箱包</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">内衣></a></dt>
+								<dd><a href="product.html">洁面乳</a></dd>
+								<dd><a href="product.html">爽肤水</a></dd>
+								<dd><a href="product.html">精华露</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">女装></a></dt>
+								<dd><a href="product.html">洗发护发</a></dd>
+								<dd><a href="product.html">染发造型</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">男装></a></dt>
+								<dd><a href="product.html">洗液</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">配饰></a></dt>
+								<dd><a href="product.html">剃须刀</a></dd>
+								<dd><a href="product.html">脱毛器</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">男鞋></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">女鞋></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">潮流包></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">功能箱包></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">流行手表></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">运动服></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+						</div>
+					</li>
+					<li class="act">
+						<h3><a href="product.html">饰品 礼品</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">项链吊坠></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">手链手镯></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">戒指></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">耳环></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">套组></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">工艺品></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">发夹></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">胸针></a></dt>
+							</dl>
+							<dl>
+								<dt><a href="product.html">钥匙扣></a></dt>
+							</dl>
+						</div>
+					</li>
+					<li class="act">
+						<h3><a href="product.html">家居 日用</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">家纺></a></dt>
+								<dd><a href="product.html">洁面乳</a></dd>
+								<dd><a href="product.html">爽肤水</a></dd>
+								<dd><a href="product.html">精华露</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">生活日用></a></dt>
+								<dd><a href="product.html">晒衣架</a></dd>
+								<dd><a href="product.html">收纳用品</a></dd>
+								<dd><a href="product.html">清洁用品</a></dd>
+								<dd><a href="product.html">安全套</a></dd>
+								<dd><a href="product.html">雨伞</a></dd>
+								<dd><a href="product.html">杯子</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">厨房日用></a></dt>
+								<dd><a href="product.html">餐具</a></dd>
+								<dd><a href="product.html">锅具</a></dd>
+								<dd><a href="product.html">刀具</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">家居生活></a></dt>
+								<dd><a href="product.html">礼品</a></dd>
+								<dd><a href="product.html">麻将机</a></dd>
+								<dd><a href="product.html">空气床</a></dd>
+								<dd><a href="product.html">母婴用品</a></dd>
+							</dl>
+						</div>
+					</li>
+					<li class="act">
+						<h3><a href="product.html">家电 数码</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">电脑整机></a></dt>
+								<dd><a href="product.html">洁面乳</a></dd>
+								<dd><a href="product.html">爽肤水</a></dd>
+								<dd><a href="product.html">精华露</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">手机></a></dt>
+								<dd><a href="product.html">洗发护发</a></dd>
+								<dd><a href="product.html">染发造型</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">家电></a></dt>
+								<dd><a href="product.html">洗液</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">家居电器></a></dt>
+								<dd><a href="product.html">剃须刀</a></dd>
+								<dd><a href="product.html">脱毛器</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">厨房电器></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">五金电器></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+						</div>
+					</li>
+					<li class="act">
+						<h3><a href="product.html">酒水 保健</a></h3>
+						<div class="category">
+							<dl>
+								<dt><a href="product.html">健身器材></a></dt>
+								<dd><a href="product.html">洁面乳</a></dd>
+								<dd><a href="product.html">爽肤水</a></dd>
+								<dd><a href="product.html">精华露</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">营养保健></a></dt>
+								<dd><a href="product.html">洗发护发</a></dd>
+								<dd><a href="product.html">染发造型</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">婴童用品></a></dt>
+								<dd><a href="product.html">洗液</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">保险旅游></a></dt>
+								<dd><a href="product.html">剃须刀</a></dd>
+								<dd><a href="product.html">脱毛器</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">票务></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">减肥产品></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="product.html">汽车></a></dt>
+								<dd><a href="product.html">防晒隔离</a></dd>
+								<dd><a href="product.html">BB霜</a></dd>
+							</dl>
+						</div>
+					</li>
+				</ul>
+			</div>			
+			<div class="sidebar_right">
+				<div class="title">
+					<h2>正在直播</h2>
+				</div>
+				<div class="time">
+					<span>[18:30-19:00]</span>
+				</div>
+				<div class="right_pic">
+					<a href="product.html"><img src="img/581af329ac605.jpg"/></a>
+					<p>
+						<a href="product.html">馨之屋旋转拖把1+1+4优惠组</a>
+					</p>
+					<span>￥199</span>
+				</div>
+				
+			</div>
+
+		</div>
+		
+		<!--轮播图-->
+		<div class="banner">
+			<ul id="bannerPic">
+				<!--<li></li>-->
+			</ul>
+			<ol id="bannerNum">
+				<!--<li class="hover">1</li>
+				-->
+			</ol>
+			<button class="btn" id="banner_pre"></button>
+			<button class="btn" id="banner_next"></button>
+		</div>
+		<!--轮播图结束-->
+		
+		<div class="main_content">	
+			<!--直播-->
+			<div class="tvlive_box">
+				<div class="livetitle">
+					<span><a class="cur" href="product.html">今日热播</a></span>
+					<span class="span1"><a href="product.html">昨日热播</a></span>				
+				</div>
+				<div class="livecontent">
+					<!--
+                    
+					<a href="#"><img class="first_pic" src="img/57de4a8f5ae5b.jpg"></a>
+					<ul>
+						<li>
+							<span class="time">[06:01~06:30]</span>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/58107ae717942.jpg"/>
+							</a>
+							</div>
+							<span class="icon">
+								直播
+							</span>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+						</li>
+						<li>
+							<span class="time">[06:01~06:30]</span>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/5812f8f924209.jpg"/>
+							</a>
+							</div>
+							<span class="icon">
+								直播
+							</span>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+						</li>
+						<li>
+							<span class="time">[06:01~06:30]</span>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/58088cd3affc8.jpg"/>
+							</a>
+							</div>
+							<span class="icon">
+								直播
+							</span>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+						</li>
+						<li>
+							<span class="time">[06:01~06:30]</span>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/58107f1e3219d.jpg"/>
+							</a>
+							</div>
+							<span class="icon">
+								直播
+							</span>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+						</li>
+						<button class="live_pre"><</button>
+						<button class="live_next">></button>
+					</ul>
+					-->
+				</div>
+			</div>
+			<!--热卖推荐-->
+			<div class="hotsale_box">
+				<div class="hottitle">
+					<span><a href="#">热销推荐</a></span>				
+				</div>
+				<div class="hotcontent">
+					<!--<a class="a1" href="#"><img src="img/571491fb64d0a.jpg"></a>
+					
+					<ul>
+						<li>
+							<div class="pic">
+								<a  href="#">
+									<img src="img/1474624648366915027.jpg"/>
+								</a>
+							</div>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+							<div class="sale_count">已热销：<span>2323</span>件</div>
+						</li>
+						<li>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/1474624648366915027.jpg"/>
+							</a>
+							</div>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+							<div class="sale_count">已热销：<span>2323</span>件</div>
+						</li>
+						<li>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/1474624648366915027.jpg"/>
+							</a>
+							</div>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+							<div class="sale_count">已热销：<span>2323</span>件</div>
+						</li>
+						<li>
+							<div class="pic">
+							<a  href="#">
+								<img src="img/1474624648366915027.jpg"/>
+							</a>
+							</div>
+							<p><a class="goods"  href="#">牧吾雅致生活男士休闲裤劲爆组</a></p>
+							<p><a class="price" href="#">¥199.00</a></p>
+							<div class="sale_count">已热销：<span>2323</span>件</div>
+						</li>
+					</ul>
+					-->
+				</div>
+			</div>
+			
+			<!--楼层 1楼-->		
+			<div class="floor f1">
+				<div class="floor_name">
+					<img src="img/d.png"/>
+					<span>服装鞋帽</span>
+				</div>
+				<div class="act_left">
+					<div class="floor_left">
+						<div class="floor_left_nav">
+							<ul>
+								<li><a href="#">连衣裙</a></li>
+								<li><a href="#">内衣</a></li>
+								<li><a href="#">男式衬衫</a></li>
+								<li><a href="#">男士T恤</a></li>
+								<li><a href="#">男裤</a></li>
+								<li><a href="#">时尚女包</a></li>
+								<li><a href="#">男鞋</a></li>
+								<li><a href="#">手表</a></li>
+							</ul>
+						</div>
+						<!--
+						<div class="floor_left_pic">
+							<a href="#">
+								<img src="img/580042788e13f.jpg"/>
+							</a>					
+						</div>
+						-->
+					</div>
+					<!--
+					<div class="floor_middle_bigpic">
+						<a href="#">
+							<img src="img/580835948f341.jpg"/>
+						</a>
+					</div>
+					-->
+				</div>	
+				<div class="floor_right act_right">
+					<ul class="right_ul">
+						<!--
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+								<i class="t"></i>
+								<i class="r"></i>
+								<i class="b"></i>
+								<i class="l"></i>
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+			<!--2楼-->		
+			<div class="floor f2">
+				<div class="floor_name">
+					<img src="img/floor2.png"/>
+					<span>个护美妆</span>
+				</div>
+				<div class="act_left">
+					<div class="floor_left">
+						<div class="floor_left_nav">
+							<ul>
+								<li><a href="#">面膜</a></li>
+								<li><a href="#">染发造型</a></li>
+								<li><a href="#">BB霜</a></li>
+								<li><a href="#">香水</a></li>
+								<li><a href="#">肥皂</a></li>
+								<li><a href="#">乳业面霜</a></li>
+								<li><a href="#">眼部护理</a></li>
+							</ul>
+						</div>
+						<!--
+						<div class="floor_left_pic">
+							<a href="#">
+								<img src="img/580042788e13f.jpg"/>
+							</a>					
+						</div>
+						-->
+					</div>
+					<!--
+					<div class="floor_middle_bigpic">
+						<a href="#">
+							<img src="img/580835948f341.jpg"/>
+						</a>
+					</div>
+					-->
+				</div>	
+				<div class="floor_right act_right">
+					<ul class="right_ul">
+						<!--
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+				
+			<!--3楼-->		
+			<div class="floor f3">
+				<div class="floor_name">
+					<img src="img/floor3.png"/>
+					<span>食品酒水</span>
+					<span>运动保健</span>
+				</div>
+				<div class="act_left">
+					<div class="floor_left">
+						<div class="floor_left_nav">
+							<ul>
+								<li><a href="#">水果</a></li>
+								<li><a href="#">跑步机</a></li>
+								<li><a href="#">按摩器材</a></li>
+								<li><a href="#">健身机</a></li>
+								<li><a href="#">保健品</a></li>
+								<li><a href="#">水果/零食</a></li>
+								<li><a href="#">酒水</a></li>
+								<li><a href="#">水果</a></li>
+								<li><a href="#">大闸蟹</a></li>
+							</ul>
+						</div>
+						<!--
+						<div class="floor_left_pic">
+							<a href="#">
+								<img src="img/580042788e13f.jpg"/>
+							</a>					
+						</div>
+						-->
+					</div>
+					<!--
+					<div class="floor_middle_bigpic">
+						<a href="#">
+							<img src="img/580835948f341.jpg"/>
+						</a>
+					</div>
+					-->
+				</div>	
+				<div class="floor_right act_right">
+					<ul class="right_ul">
+						<!--
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+			<!--4楼-->		
+			<div class="floor f4">
+				<div class="floor_name">
+					<img src="img/floor4.png"/>
+					<span>家居日用</span>
+					<span>家用电器</span>
+				</div>
+				<div class="act_left">
+					<div class="floor_left">
+						<div class="floor_left_nav">
+							<ul>
+								<li><a href="#">床品件套</a></li>
+								<li><a href="#">凉席</a></li>
+								<li><a href="#">清洁用品</a></li>
+								<li><a href="#">锅具</a></li>
+								<li><a href="#">刀具</a></li>
+								<li><a href="#">空调扇</a></li>
+								<li><a href="#">料理/榨汁</a></li>
+								<li><a href="#">电饭煲</a></li>
+								<li><a href="#">电热锅</a></li>
+							</ul>
+						</div>
+						<!--
+						<div class="floor_left_pic">
+							<a href="#">
+								<img src="img/580042788e13f.jpg"/>
+							</a>					
+						</div>
+						-->
+					</div>
+					<!--
+					<div class="floor_middle_bigpic">
+						<a href="#">
+							<img src="img/580835948f341.jpg"/>
+						</a>
+					</div>
+					-->
+				</div>	
+				<div class="floor_right act_right">
+					<ul class="right_ul">
+						<!--
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						<li>
+							<div class="goods_pic">
+								<a href="#"><img src="img/1475140112362163202.jpg"/></a>							
+							</div>
+							<p class="goods"><a href="#">迪格尔斯新款条纹男士翻领POLO衫4+1件组</a></p>
+							<p class="price">¥298</p>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+		<!--通过js从外部引入footer.html-->
+		</div>
+		
+		<!--底部固定图片-->
+		<!--<div id="bottom_ad">
+			<img src="img/ad.png"/>
+			<span>X</span>
+		</div>-->
+	</body>
+</html>

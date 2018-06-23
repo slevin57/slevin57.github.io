@@ -1,0 +1,286 @@
+
+
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "微软雅黑";
+}
+
+ul,ol {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.header{
+	position: relative;
+	z-index: 2;
+}
+.head{
+	margin-bottom: 10px;
+}
+.head .nav_outer {
+	height: 36px;
+	background: #F7F7F7;
+	border-bottom: 1px solid #E8E8E7;
+}
+
+.head .nav_outer .nav {
+	width: 1190px;
+	height: 26px;
+	line-height: 26px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.head .tel{
+	width: 230px;
+	height: 28px;
+	line-height: 28px;
+	margin-right: 10px;
+	font-size: 12px;
+	font-family: "宋体";
+	float: left;
+}
+/*
+ 行间元素和行内块元素一定要设置宽高才能显示，
+ 图片撑不起来。
+ */
+.head .tel i{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/ind-tel.png);
+	vertical-align: middle;
+}
+.head .tel span{
+	font-size: 13px;
+	font-weight: bold;
+	color: #E91456;
+}
+.head .login-info{
+	width: :;0px;
+	height: 26px;
+	font-size: 12px;
+	float: left;
+	/*为什么不写float会溢出外面，而且是排在下面的？*/
+}
+.head .login-info span{
+	margin-right: 5px;
+}
+.head .nav ul{
+	float: right;
+	font-size: 12px;
+}
+.head .nav ul li{
+	float: left;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+.head .nav ul i{
+	float: left;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/ind-mobile.png);
+	margin-top: 5px;
+	margin-right: 3px;
+}
+.head .nav a:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+
+.head .search {
+	width: 1190px;
+	height: 74px;
+	margin: 10px auto 0;
+	position: relative;
+}
+.head .search #logo{
+	display: block;
+	float: left;
+	margin-right: 240px;
+}
+#searchForm{
+	border: 1px solid #E91456;
+	width: 412px;
+	display: block;
+	float: left;
+	margin-top: 20px;
+}
+.head .search #search_input{
+	width: 320px;
+	height: 30px;
+	padding-left: 5px;
+	/*一个链接或者一个radio获得焦点的时候，该元素将会被一个轮廓虚线框围绕。这个轮廓虚线框就是 outline */
+	outline: 0;
+	float: left;
+}
+.head .search button{
+	height: 32px;
+	width: 82px;
+	background: #E91456;
+	color: #F7F7F7;
+	font-size: 13px;
+	padding: 0 6px;
+	cursor: pointer;
+	float: right;
+}
+.head .search button:hover{
+	background: #cc1c23;
+}
+.head .search i{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 12px;
+	width: 16px;
+	height: 16px;
+	background: url(../img/search.png);
+}
+.head .search #cart{
+	padding-top: 20px;
+	position: absolute;
+	right: 5px;
+}
+.head .search #cart a{
+	width: 110px;
+	height: 26px;
+	display: block;
+	border: 1px solid #E8E8E7;
+	font-size: 13px;
+	text-align: center;
+	padding: 0 50px 5px 10px;
+}
+.head #cart a span{
+	display: inline-block;
+	width: 16px;
+	height: 13px;
+	background: url(../img/cart.png);
+	position: relative;
+	margin-top: 15px;
+	margin-right: 25px;
+}
+.head #cart a span i{
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	line-height: 17px;
+	text-align: center;
+	background: #E91456;
+	color: #FFF;
+	font-size: 10px;
+	border-radius: 50%;
+	position: absolute;
+	left: 13px;
+	top: -12px;
+	font-style: normal;
+	margin-right: 0;
+}
+.head #cart a em{
+	font-style: normal;
+	line-height: 33px;
+	display: inline-block;
+	float: right;
+}
+
+.main_nav_outer{
+	border-bottom: 2px solid #E91456;
+	margin-top: 20px;
+}
+.main_nav {
+	/*padding-left: 235px;*/
+	width: 1190px;
+	height: 34px;
+	margin: 0 auto;
+	position: relative;
+}
+/*.content .nav ul{
+	position: relative;
+}*/
+.main_nav .all_classify{
+	width: 196px;
+	height: 36px;
+	font-size: 17px;
+	background: #E91456;
+	color: #FFFFFF;
+	float: left;
+	margin-right: 39px;
+}
+.main_nav .all_classify b{
+	height: 36px;
+	line-height: 34px;
+	display: block;
+	padding-left: 10px;
+}
+.main_nav .all_classify b:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+.main_nav .mini_classify{
+	width: 184px;
+	height: 202px;
+	padding-left: 10px;
+	background: #FFFFFF;
+	border: 1px solid rgb(201, 201, 201);
+	display: none;
+}
+.main_nav .mini_classify ul li{
+	height: 34px;
+}
+.main_nav .mini_classify ul li a{
+	font-size: 12px;
+	color: #444444;
+}
+.main_nav .mini_classify ul li a:hover{
+	color: #E91456;
+	text-decoration: underline;
+}
+.main_nav .top li{
+	float: left;
+	height: 28px;
+	padding-top: 6px;
+}
+.main_nav .top{
+	float: left;
+}
+.main_nav .top li a{
+	font-size: 17px;
+	font-family: "microsoft yahei";
+	font-weight: 600;
+	padding: 0 20px;
+}
+.main_nav .top li a:hover{
+	color: #E91456;
+}
+.main_nav .top li a.cur{
+	color: #E91456;
+}
+.main_nav .top .line{
+	/*控制小竖条的垂直为位置*/
+	padding: 8px 0 1px 0;
+}
+.main_nav .top .line i{
+	display: inline-block;
+	height: 12px;
+	width: 0;
+	border-right: 1px solid lightgray;
+	background: gray;
+}
+.main_nav .call{
+	float: right;
+	margin-right: 195px;
+	font-size: 12px;
+	color: #E91456;
+	font-weight: bold;
+}
+.main_nav .call span {
+	height: 34px;
+	line-height: 34px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+
