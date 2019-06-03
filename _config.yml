@@ -72,6 +72,6 @@ google_analytics: UA-89645446-1 #谷歌分析
 deploy:
   type: git
   repo: git@github.com:Patricklea/Patricklea.github.io.git
-  branck: master
+  branch: master
 
 avatar: /images/avatar-sanpang.jpg
